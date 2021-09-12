@@ -57,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 // calling a method to post the data and passing our name and job.
-                postDataUsingVolley(username.getText().toString(), email.getText().toString(), phone.getText().toString(), identification.getText().toString(),
-                        password.getText().toString(), password2.getText().toString());
+                postDataUsingVolley(username.getText().toString(), phone.getText().toString(), identification.getText().toString(),
+                        password.getText().toString());
             }
         });
     }
 
-    private void postDataUsingVolley(String username, String email, String phone, String identification, String password, String password2) {
+    private void postDataUsingVolley(String username,  String phone, String identification, String password) {
         // our django endpoint
         String url = " http://7f20-41-81-94-210.ngrok.io/register";
         loadingPB.setVisibility(View.VISIBLE);
@@ -120,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 params.put("phone", phone);
                 params.put("identification", identification);
                 params.put("password", password);
-                params.put("password2", password2);
 
                 // at last we are
                 // returning our params.
